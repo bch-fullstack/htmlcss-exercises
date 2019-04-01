@@ -3,73 +3,85 @@
 Is you use this in a project, drop me a line. I'd love to see it used in action!
 
 */
-$(document).ready(function() {
-	var c = $("#mid-c")[0];
-	var cs = $("#mid-c-sharp")[0];
-	var d = $("#mid-d")[0];
-	var ds = $("#mid-d-sharp")[0];
-	var e = $("#mid-e")[0];
-	var f = $("#mid-f")[0];
-	var fs = $("#mid-f-sharp")[0];
-	var g = $("#mid-g")[0];
-	var gs = $("#mid-g-sharp")[0];
-	var a = $("#mid-a")[0];
-	var as = $("#mid-a-sharp")[0];
-	var b = $("#mid-b")[0];
 
-	//c.play();
-	$("li").click(function() {
-		var note = this.dataset.note;
-		//alert(note);
-		switch (note) {
-			case "a":
-				a.play();
-				break;
-			case "b":
-				b.play();
-				break;
-			case "c":
-				c.play();
-				break;
-			case "d":
-				d.play();
-				break;
+document.addEventListener("DOMContentLoaded", function (event) {
+	var buttons = document.getElementsByClassName('piano-button'),
+		index = buttons.length;
 
-			case "e":
-				e.play();
-				break;
-
-			case "f":
-				f.play();
-				break;
-
-			case "g":
-				g.play();
-				break;
-
-			case "as":
-				as.play();
-				break;
-
-			case "cs":
-				cs.play();
-				break;
-
-			case "ds":
-				ds.play();
-				break;
-
-			case "fs":
-				fs.play();
-				break;
-
-			case "gs":
-				gs.play();
-				break;
-		}
-	});
-
+	while (index--) {
+		buttons[index].addEventListener('click', function(){
+			var note = this.dataset.note.replace('s', '-sharp');
+			document.getElementById(note).play();
+		});
+	}
 });
+// $(document).ready(function() {
+// 	var c = $("#mid-c")[0];
+// 	var cs = $("#mid-c-sharp")[0];
+// 	var d = $("#mid-d")[0];
+// 	var ds = $("#mid-d-sharp")[0];
+// 	var e = $("#mid-e")[0];
+// 	var f = $("#mid-f")[0];
+// 	var fs = $("#mid-f-sharp")[0];
+// 	var g = $("#mid-g")[0];
+// 	var gs = $("#mid-g-sharp")[0];
+// 	var a = $("#mid-a")[0];
+// 	var as = $("#mid-a-sharp")[0];
+// 	var b = $("#mid-b")[0];
+
+// 	//c.play();
+// 	$("li").click(function() {
+// 		var note = this.dataset.note;
+// 		//alert(note);
+// 		switch (note) {
+// 			case "a":
+// 				a.play();
+// 				break;
+// 			case "b":
+// 				b.play();
+// 				break;
+// 			case "c":
+// 				c.play();
+// 				break;
+// 			case "d":
+// 				d.play();
+// 				break;
+
+// 			case "e":
+// 				e.play();
+// 				break;
+
+// 			case "f":
+// 				f.play();
+// 				break;
+
+// 			case "g":
+// 				g.play();
+// 				break;
+
+// 			case "as":
+// 				as.play();
+// 				break;
+
+// 			case "cs":
+// 				cs.play();
+// 				break;
+
+// 			case "ds":
+// 				ds.play();
+// 				break;
+
+// 			case "fs":
+// 				fs.play();
+// 				break;
+
+// 			case "gs":
+// 				gs.play();
+// 				break;
+// 		}
+// 	});
+
+// });
 //audio.play();
 
 // Javascript adapted from here: 
